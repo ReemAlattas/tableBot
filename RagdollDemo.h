@@ -94,13 +94,16 @@ class RagdollDemo : public GlutDemoApplication
         boxBody = localCreateRigidBody(btScalar(1.), offset*transform, boxGeom);
         //btRigidBody* body[9];
         body[index]= boxBody;
-        body[index]->setUserPointer(&(IDs[index]));
+        (body[index])->setUserPointer(&(IDs[index]));
     }
     
     void CreateCylinder(int index,
                         double x, double y, double z,
                         double radius, double height, double eulerX, double eulerY, double eulerZ)
     {
+        
+        for (int i = 0; i < 10; i++)
+            IDs[i] = i;
         
         btCollisionShape* cylGeom;
         btRigidBody* cylBody;
@@ -122,6 +125,7 @@ class RagdollDemo : public GlutDemoApplication
         cylBody = localCreateRigidBody(btScalar(1.), offset*transform, geom[index]);
         //btRigidBody* body[9];
         body[index]= cylBody;
+        (body[index])->setUserPointer(&(IDs[index]));
     }
     
     void DeleteObject( int index ){
