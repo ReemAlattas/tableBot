@@ -115,7 +115,6 @@ class RagDoll
                    double x, double y, double z,
                    double length, double width, double height)
     {
-        
         btCollisionShape* box;
         btRigidBody* boxBody;
         
@@ -135,8 +134,6 @@ class RagDoll
         boxBody = localCreateRigidBody(btScalar(1.), offset*transform, box);
         //btRigidBody* body[9];
         //body[index]= boxBody;
-        
-        
     }
     
     

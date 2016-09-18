@@ -65,13 +65,15 @@ class RagdollDemo : public GlutDemoApplication
     
     bool oneStep;
     
-    int IDs[10] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
+    int IDs[10];
     
     
     void CreateBox(int index,
                    double x, double y, double z,
                    double length, double width, double height)
     {
+        for (int i = 0; i < 10; i++)
+            IDs[i] = i;
         
         btCollisionShape* boxGeom;
         btRigidBody* boxBody;
@@ -92,8 +94,7 @@ class RagdollDemo : public GlutDemoApplication
         boxBody = localCreateRigidBody(btScalar(1.), offset*transform, boxGeom);
         //btRigidBody* body[9];
         body[index]= boxBody;
-        
-        
+        body[index]->setUserPointer(&(IDs[index]));
     }
     
     void CreateCylinder(int index,
