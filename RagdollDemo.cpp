@@ -367,7 +367,7 @@ bool myContactProcessedCallback(btManifoldPoint& cp,
     ID1 = static_cast<int*>(o1->getUserPointer());
     ID2 = static_cast<int*>(o2->getUserPointer());
     
-    /* Your code will go here. See the next step. */
+    printf("ID1 = %d, ID2 = %d\n", *ID1, *ID2);
     
     return false;
 }
