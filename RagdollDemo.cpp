@@ -550,6 +550,10 @@ void RagdollDemo::clientMoveAndDisplay()
         int count = 0;
         if(!pause || (pause && oneStep))
         {
+            for (int k=0; k<10; k++)
+                touches[k] = 0;
+            
+            
             // Fig. a
             //ActuateJoint(0, -45., -90., ms / 1000000.f);
             
