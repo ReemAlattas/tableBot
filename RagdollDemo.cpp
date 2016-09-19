@@ -377,6 +377,8 @@ void RagdollDemo::initPhysics()
 {
     // Setup the basic world
     
+    gContactProcessedCallback = myContactProcessedCallback;
+    
     setTexturing(true);
     setShadows(true);
     
