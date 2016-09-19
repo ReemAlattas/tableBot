@@ -356,7 +356,21 @@ public:
     }
 };
 
-
+bool myContactProcessedCallback(btManifoldPoint& cp,
+                                void* body0, void* body1)
+{
+    int *ID1, *ID2;
+    btCollisionObject* o1 = static_cast<btCollisionObject*>(body0);
+    btCollisionObject* o2 = static_cast<btCollisionObject*>(body1);
+    int groundID = 9;
+    
+    ID1 = static_cast<int*>(o1->getUserPointer());
+    ID2 = static_cast<int*>(o2->getUserPointer());
+    
+    /* Your code will go here. See the next step. */
+    
+    return false;
+}
 
 
 void RagdollDemo::initPhysics()
