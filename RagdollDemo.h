@@ -67,8 +67,6 @@ class RagdollDemo : public GlutDemoApplication
     
     int IDs[10];
     
-    int touches[10];
-    
     
     void CreateBox(int index,
                    double x, double y, double z,
@@ -199,6 +197,8 @@ class RagdollDemo : public GlutDemoApplication
     
 public:
     
+    int touches[10];
+    
     void CreateBox();
     
     void initPhysics();
@@ -217,6 +217,7 @@ public:
     virtual void displayCallback();
     
     virtual void keyboardCallback(unsigned char key, int x, int y);
+    
     
     static DemoApplication* Create()
     {

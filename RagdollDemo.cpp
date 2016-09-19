@@ -356,6 +356,8 @@ public:
     }
 };
 
+static RagdollDemo* ragdollDemo;
+
 bool myContactProcessedCallback(btManifoldPoint& cp,
                                 void* body0, void* body1)
 {
@@ -369,6 +371,9 @@ bool myContactProcessedCallback(btManifoldPoint& cp,
     
     printf("ID1 = %d, ID2 = %d\n", *ID1, *ID2);
     
+    //ragdollDemo->touches[*ID1] = 1;
+    //ragdollDemo->touches[*ID2] = 1;
+    
     return false;
 }
 
@@ -376,6 +381,8 @@ bool myContactProcessedCallback(btManifoldPoint& cp,
 void RagdollDemo::initPhysics()
 {
     // Setup the basic world
+    
+    ragdollDemo = this;
     
     gContactProcessedCallback = myContactProcessedCallback;
     
@@ -553,7 +560,6 @@ void RagdollDemo::clientMoveAndDisplay()
             for (int k=0; k<10; k++)
                 touches[k] = 0;
             
-            
             // Fig. a
             //ActuateJoint(0, -45., -90., ms / 1000000.f);
             
@@ -590,16 +596,16 @@ void RagdollDemo::clientMoveAndDisplay()
                 
                 //*** Fig. d --- Final ***//
 //                
-//                ActuateJoint(4, random[0], M_PI_2, ms / 1000000.f);
-//                ActuateJoint(5, random[1], M_PI_2, ms / 1000000.f);
-//                ActuateJoint(6, random[2], M_PI_2, ms / 1000000.f);
-//                ActuateJoint(7, random[3], M_PI_2, ms / 1000000.f);
-//                
-//                //Jeg joints: offset negative if the axis vectors are negative => joint limits are negative
-//                ActuateJoint(0, random[4], M_PI_2, ms / 1000000.f);
-//                ActuateJoint(1, random[5], M_PI_2, ms / 1000000.f);
-//                ActuateJoint(2, random[6], M_PI_2, ms / 1000000.f);
-//                ActuateJoint(3, random[7], M_PI_2, ms / 1000000.f);
+                ActuateJoint(4, random[0], M_PI_2, ms / 1000000.f);
+                ActuateJoint(5, random[1], M_PI_2, ms / 1000000.f);
+                ActuateJoint(6, random[2], M_PI_2, ms / 1000000.f);
+                ActuateJoint(7, random[3], M_PI_2, ms / 1000000.f);
+                
+                //Jeg joints: offset negative if the axis vectors are negative => joint limits are negative
+                ActuateJoint(0, random[4], M_PI_2, ms / 1000000.f);
+                ActuateJoint(1, random[5], M_PI_2, ms / 1000000.f);
+                ActuateJoint(2, random[6], M_PI_2, ms / 1000000.f);
+                ActuateJoint(3, random[7], M_PI_2, ms / 1000000.f);
                 
                 
             }
@@ -612,7 +618,7 @@ void RagdollDemo::clientMoveAndDisplay()
 //            ActuateJoint(4, -M_PI_4, M_PI_2, ms / 1000000.f);
             
             //Fig. b
-            ActuateJoint(4, +M_PI_4, M_PI_2, ms / 1000000.f);
+            //ActuateJoint(4, +M_PI_4, M_PI_2, ms / 1000000.f);
             
             //Fig. c
 //            ActuateJoint(4, M_PI_4, M_PI_2, ms / 1000000.f);
