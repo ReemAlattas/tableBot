@@ -201,6 +201,16 @@ public:
     
     void CreateBox();
     
+    virtual void renderme() {
+        extern GLDebugDrawer gDebugDrawer;
+        // Call the parent method.
+        GlutDemoApplication::renderme();
+        // Make a circle with a 0.9 radius at (0,0,0)
+        // with RGB color (1,0,0).
+        gDebugDrawer.drawSphere(btVector3(0.,0.,0.), 0.9, btVector3(1., 0., 0.));
+    }
+
+    
     void initPhysics();
     
     void exitPhysics();
