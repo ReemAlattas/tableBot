@@ -67,6 +67,8 @@ class RagdollDemo : public GlutDemoApplication
     
     int IDs[10];
     
+    int touches[10];
+    
     
     void CreateBox(int index,
                    double x, double y, double z,
