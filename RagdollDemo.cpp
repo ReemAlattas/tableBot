@@ -397,6 +397,7 @@ void RagdollDemo::initPhysics()
         btCollisionObject* fixedGround = new btCollisionObject();
         fixedGround->setCollisionShape(groundShape);
         fixedGround->setWorldTransform(groundTransform);
+        fixedGround->setUserPointer(&IDs[9]);
         m_dynamicsWorld->addCollisionObject(fixedGround);
 #else
         localCreateRigidBody(btScalar(0.),groundTransform,groundShape);
