@@ -198,6 +198,7 @@ class RagdollDemo : public GlutDemoApplication
 public:
     
     int touches[10];
+    btVector3 touchPoints[10];
     
     void CreateBox();
     
@@ -207,7 +208,15 @@ public:
         GlutDemoApplication::renderme();
         // Make a circle with a 0.9 radius at (0,0,0)
         // with RGB color (1,0,0).
-        gDebugDrawer.drawSphere(btVector3(0.,0.,0.), 0.9, btVector3(1., 0., 0.));
+        //gDebugDrawer.drawSphere(btVector3(0.,0.,0.), 0.9, btVector3(1., 0., 0.));
+        
+        for(int i = 5; i<9; i++)
+        {
+            if(touches[i] == 1)
+            {
+                gDebugDrawer.drawSphere(touchPoints[i], 0.2, btVector3(1., 0., 0.));
+            }
+        }
     }
 
     

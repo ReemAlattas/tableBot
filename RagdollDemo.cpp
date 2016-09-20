@@ -371,8 +371,13 @@ bool myContactProcessedCallback(btManifoldPoint& cp,
     
     printf("ID1 = %d, ID2 = %d\n", *ID1, *ID2);
     
-    //ragdollDemo->touches[*ID1] = 1;
-    //ragdollDemo->touches[*ID2] = 1;
+    ragdollDemo->touches[*ID1] = 1;
+    ragdollDemo->touches[*ID2] = 1;
+    
+    ragdollDemo->touches[*ID1] = 1;
+    ragdollDemo->touches[*ID2] = 1;
+    ragdollDemo->touchPoints[*ID1] = cp.m_positionWorldOnB;
+    ragdollDemo->touchPoints[*ID2] = cp.m_positionWorldOnB;
     
     return false;
 }
