@@ -389,7 +389,11 @@ void RagdollDemo::initPhysics()
  
     for (int i=0; i<4; i++)
         for (int j=0; j<8; j++)
-            weights[i][j] = 0;
+        {
+            weights[i][j] = ((float(rand()) / float(RAND_MAX)) * (1 - (-1))) + (-1);
+            //printf(weights[i][j]);
+        }
+    
             
     
     ragdollDemo = this;
