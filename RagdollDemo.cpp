@@ -386,6 +386,11 @@ bool myContactProcessedCallback(btManifoldPoint& cp,
 void RagdollDemo::initPhysics()
 {
     // Setup the basic world
+ 
+    for (int i=0; i<4; i++)
+        for (int j=0; j<8; j++)
+            weights[i][j] = 0;
+            
     
     ragdollDemo = this;
     
