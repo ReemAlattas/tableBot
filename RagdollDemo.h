@@ -68,6 +68,9 @@ class RagdollDemo : public GlutDemoApplication
     int IDs[10];
     
     
+    double weights[4][8];
+    
+    
     void CreateBox(int index,
                    double x, double y, double z,
                    double length, double width, double height)
