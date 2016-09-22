@@ -620,6 +620,7 @@ void RagdollDemo::clientMoveAndDisplay()
             }
             
             motorCommand = tanh(motorCommand);
+            motorCommand = motorCommand*45;
             
             if(count %1000 == 0)
             {
