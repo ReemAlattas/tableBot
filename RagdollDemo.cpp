@@ -385,6 +385,7 @@ bool myContactProcessedCallback(btManifoldPoint& cp,
 
 void RagdollDemo::initPhysics()
 {
+    timeStep = 0;
     // Setup the basic world
  
     for (int i=0; i<4; i++)
