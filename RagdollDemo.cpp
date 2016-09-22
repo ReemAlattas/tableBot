@@ -616,16 +616,7 @@ void RagdollDemo::clientMoveAndDisplay()
                 motorCommand = tanh(motorCommand);
                 motorCommand = motorCommand*45;
                 
-                ActuateJoint(4, motorCommand, M_PI_2, ms / 1000000.f);
-                ActuateJoint(5, motorCommand, M_PI_2, ms / 1000000.f);
-                ActuateJoint(6, motorCommand, M_PI_2, ms / 1000000.f);
-                ActuateJoint(7, motorCommand, M_PI_2, ms / 1000000.f);
-                
-                //Jeg joints: offset negative if the axis vectors are negative => joint limits are negative
-                ActuateJoint(0, motorCommand, M_PI_2, ms / 1000000.f);
-                ActuateJoint(1, motorCommand, M_PI_2, ms / 1000000.f);
-                ActuateJoint(2, motorCommand, M_PI_2, ms / 1000000.f);
-                ActuateJoint(3, motorCommand, M_PI_2, ms / 1000000.f);
+                ActuateJoint(i, motorCommand, M_PI_2, ms / 1000000.f);
             }
             
             

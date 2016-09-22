@@ -68,9 +68,6 @@ class RagdollDemo : public GlutDemoApplication
     int IDs[10];
     
     
-    double weights[4][8];
-    
-    
     void CreateBox(int index,
                    double x, double y, double z,
                    double length, double width, double height)
@@ -199,8 +196,9 @@ class RagdollDemo : public GlutDemoApplication
     
     
 public:
-    
     int touches[10];
+    double weights[4][8];
+    long timeStep;
     btVector3 touchPoints[10];
     
     void CreateBox();
