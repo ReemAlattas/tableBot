@@ -613,21 +613,9 @@ void RagdollDemo::clientMoveAndDisplay()
                     motorCommand = motorCommand + (touches[i+5] * weights[i][j]);
                 }
                 
-                //[step 7 here]
-                //[step 8 here]
+                motorCommand = tanh(motorCommand);
+                motorCommand = motorCommand*45;
                 
-                ActuateJoint(i,motorCommand,...); [step 9]
-            }
-            
-            motorCommand = tanh(motorCommand);
-            motorCommand = motorCommand*45;
-            
-            if(count %1000 == 0)
-            {
-                //Hinge main body to legs: The offset is negative if the axis vectors are positive => the joint limits are negative
-                
-                //*** Fig. e --- Final ***//
-//                
                 ActuateJoint(4, random[0], M_PI_2, ms / 1000000.f);
                 ActuateJoint(5, random[1], M_PI_2, ms / 1000000.f);
                 ActuateJoint(6, random[2], M_PI_2, ms / 1000000.f);
@@ -638,8 +626,27 @@ void RagdollDemo::clientMoveAndDisplay()
                 ActuateJoint(1, random[5], M_PI_2, ms / 1000000.f);
                 ActuateJoint(2, random[6], M_PI_2, ms / 1000000.f);
                 ActuateJoint(3, random[7], M_PI_2, ms / 1000000.f);
-                
             }
+            
+            
+            //if(count %1000 == 0)
+            //{
+                //Hinge main body to legs: The offset is negative if the axis vectors are positive => the joint limits are negative
+                
+                //*** Fig. e --- Final ***//
+//                
+//                ActuateJoint(4, random[0], M_PI_2, ms / 1000000.f);
+//                ActuateJoint(5, random[1], M_PI_2, ms / 1000000.f);
+//                ActuateJoint(6, random[2], M_PI_2, ms / 1000000.f);
+//                ActuateJoint(7, random[3], M_PI_2, ms / 1000000.f);
+//                
+//                //Jeg joints: offset negative if the axis vectors are negative => joint limits are negative
+//                ActuateJoint(0, random[4], M_PI_2, ms / 1000000.f);
+//                ActuateJoint(1, random[5], M_PI_2, ms / 1000000.f);
+//                ActuateJoint(2, random[6], M_PI_2, ms / 1000000.f);
+//                ActuateJoint(3, random[7], M_PI_2, ms / 1000000.f);
+            
+            //}
             
             m_dynamicsWorld->stepSimulation(ms / 1000000.f);
             oneStep = !oneStep;
