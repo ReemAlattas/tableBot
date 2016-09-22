@@ -604,11 +604,26 @@ void RagdollDemo::clientMoveAndDisplay()
             for(int k = 0; k<8; k++)
                 printf("%f\n", random[k]);
             
+            for (int i=0; i<8; i++) {
+                
+                double motorCommand = 0.0;
+                
+                for (int j=0; j<4; j++) {
+                    
+                    //motorCommand = motorCommand + [step 6 here];
+                }
+                
+                //[step 7 here]
+                //[step 8 here]
+                
+                ActuateJoint(i,motorCommand,...); [step 9]
+            }
+            
             if(count %1000 == 0)
             {
                 //Hinge main body to legs: The offset is negative if the axis vectors are positive => the joint limits are negative
                 
-                //*** Fig. d --- Final ***//
+                //*** Fig. e --- Final ***//
 //                
                 ActuateJoint(4, random[0], M_PI_2, ms / 1000000.f);
                 ActuateJoint(5, random[1], M_PI_2, ms / 1000000.f);
@@ -620,7 +635,6 @@ void RagdollDemo::clientMoveAndDisplay()
                 ActuateJoint(1, random[5], M_PI_2, ms / 1000000.f);
                 ActuateJoint(2, random[6], M_PI_2, ms / 1000000.f);
                 ActuateJoint(3, random[7], M_PI_2, ms / 1000000.f);
-                
                 
             }
             
@@ -661,7 +675,18 @@ void RagdollDemo::clientMoveAndDisplay()
 //            ActuateJoint(2, M_PI_4, M_PI_2, ms / 1000000.f);
 //            ActuateJoint(3, -M_PI_4, M_PI_2, ms / 1000000.f);
             
-            
+            //*** Fig. e --- Final ***//
+            //
+//            ActuateJoint(4, random[0], M_PI_2, ms / 1000000.f);
+//            ActuateJoint(5, random[1], M_PI_2, ms / 1000000.f);
+//            ActuateJoint(6, random[2], M_PI_2, ms / 1000000.f);
+//            ActuateJoint(7, random[3], M_PI_2, ms / 1000000.f);
+//            
+//            //Jeg joints: offset negative if the axis vectors are negative => joint limits are negative
+//            ActuateJoint(0, random[4], M_PI_2, ms / 1000000.f);
+//            ActuateJoint(1, random[5], M_PI_2, ms / 1000000.f);
+//            ActuateJoint(2, random[6], M_PI_2, ms / 1000000.f);
+//            ActuateJoint(3, random[7], M_PI_2, ms / 1000000.f);
             
             
             
