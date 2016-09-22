@@ -619,6 +619,8 @@ void RagdollDemo::clientMoveAndDisplay()
                 ActuateJoint(i,motorCommand,...); [step 9]
             }
             
+            motorCommand = tanh(motorCommand);
+            
             if(count %1000 == 0)
             {
                 //Hinge main body to legs: The offset is negative if the axis vectors are positive => the joint limits are negative
