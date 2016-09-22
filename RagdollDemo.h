@@ -169,8 +169,12 @@ class RagdollDemo : public GlutDemoApplication
     void ActuateJoint(int jointIndex,
                       double desiredAngle, double jointOffset, double timeStep) {
         
+        double maxForce = 40.;
+        
+        
         joints[jointIndex]->enableMotor(true);
-        joints[jointIndex]->setMaxMotorImpulse(btScalar(1.25));
+        joints[jointIndex]->setMaxMotorImpulse(maxForce);
+        //joints[jointIndex]->setMaxMotorImpulse(btScalar(1.25));
         //joints[jointIndex]->setMaxMotorImpulse(btScalar(1.0));
         joints[jointIndex]->setMotorTarget(btScalar(desiredAngle+jointOffset), btScalar(timeStep));
         
