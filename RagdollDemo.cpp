@@ -610,7 +610,7 @@ void RagdollDemo::clientMoveAndDisplay()
                 
                 for (int j=0; j<4; j++) {
                     
-                    //motorCommand = motorCommand + [step 6 here];
+                    motorCommand = motorCommand + (touches[i+5] * weights[i][j]);
                 }
                 
                 //[step 7 here]
