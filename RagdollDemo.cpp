@@ -602,24 +602,29 @@ void RagdollDemo::clientMoveAndDisplay()
                 
             }
             
-            for(int k = 0; k<8; k++)
-                printf("%f\n", random[k]);
+            m_dynamicsWorld->stepSimulation(ms / 1000000.f);
             
-            for (int i=0; i<8; i++) {
+            if ( timeStep%10==0 ) {
+            
+                for(int k = 0; k<8; k++)
+                    printf("%f\n", random[k]);
+            
+                for (int i=0; i<8; i++) {
                 
-                double motorCommand = 0.0;
+                    double motorCommand = 0.0;
                 
-                for (int j=0; j<4; j++) {
+                    for (int j=0; j<4; j++) {
                     
-                    motorCommand = motorCommand + (touches[i+5] * weights[i][j]);
+                        motorCommand = motorCommand + (touches[i+5] * weights[i][j]);
+                    }
+                
+                    motorCommand = tanh(motorCommand);
+                    motorCommand = motorCommand*45;
+                
+                    ActuateJoint(i, motorCommand, M_PI_2, ms / 1000000.f);
                 }
-                
-                motorCommand = tanh(motorCommand);
-                motorCommand = motorCommand*45;
-                
-                ActuateJoint(i, motorCommand, M_PI_2, ms / 1000000.f);
             }
-            
+            timeStep++;
             
             //if(count %1000 == 0)
             //{
@@ -640,7 +645,7 @@ void RagdollDemo::clientMoveAndDisplay()
             
             //}
             
-            m_dynamicsWorld->stepSimulation(ms / 1000000.f);
+//            m_dynamicsWorld->stepSimulation(ms / 1000000.f);
             oneStep = !oneStep;
             count++;
             
