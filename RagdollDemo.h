@@ -173,9 +173,9 @@ class RagdollDemo : public GlutDemoApplication
         
         
         joints[jointIndex]->enableMotor(true);
-        joints[jointIndex]->setMaxMotorImpulse(maxForce);
+        //joints[jointIndex]->setMaxMotorImpulse(maxForce);
         //joints[jointIndex]->setMaxMotorImpulse(btScalar(1.25));
-        //joints[jointIndex]->setMaxMotorImpulse(btScalar(1.0));
+        joints[jointIndex]->setMaxMotorImpulse(btScalar(1.0));
         joints[jointIndex]->setMotorTarget(btScalar(desiredAngle+jointOffset), btScalar(timeStep));
         
     }

@@ -626,6 +626,9 @@ void RagdollDemo::clientMoveAndDisplay()
             }
             timeStep++;
             
+            if ( timeStep==1000 )
+                exit(0);
+            
             //if(count %1000 == 0)
             //{
                 //Hinge main body to legs: The offset is negative if the axis vectors are positive => the joint limits are negative
