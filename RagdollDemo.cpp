@@ -387,15 +387,29 @@ void RagdollDemo::initPhysics()
 {
     timeStep = 0;
     // Setup the basic world
- 
-    for (int i=0; i<4; i++)
-        for (int j=0; j<8; j++)
-        {
-            weights[i][j] = ((float(rand()) / float(RAND_MAX)) * (1 - (-1))) + (-1);
-            //printf(weights[i][j]);
-        }
     
+    
+    // Set the elements of matrix weights to random values
+//    for (int i=0; i<4; i++)
+//        for (int j=0; j<8; j++)
+//        {
+//            weights[i][j] = ((float(rand()) / float(RAND_MAX)) * (1 - (-1))) + (-1);
+//            //printf(weights[i][j]);
+//        }
+    
+    //Set the elements of matrix weights to the numbers stored in the weights.dat
+    ifstream inFile;
+    inFile.open("/Users/reemalattas/weights.dat");
+    string line;
+    for(int j=0; j<4; j++){
+        for(int i=0; i<8; i++){
             
+            getline (inFile, line);
+            stringstream convert(line);
+            convert >> weights[j][i];
+        }
+    }
+    inFile.close();
     
     ragdollDemo = this;
     
