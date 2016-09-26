@@ -624,13 +624,13 @@ void RagdollDemo::clientMoveAndDisplay()
                 
             }
             
-            //m_dynamicsWorld->stepSimulation(ms / 1000000.f);
+            m_dynamicsWorld->stepSimulation(ms / 1000000.f);
             //replaces the above LOC
-            while ( (touches[2]==0) &&
-                   (touches[4]==0) &&
-                   (touches[6]==0) &&
-                   (touches[8]==0) )
-                m_dynamicsWorld->stepSimulation(ms / 1000000.f);
+//            while ( (touches[2]==0) &&
+//                   (touches[4]==0) &&
+//                   (touches[6]==0) &&
+//                   (touches[8]==0) )
+//                m_dynamicsWorld->stepSimulation(ms / 1000000.f);
             
             if ( timeStep%10==0 ) {
             
