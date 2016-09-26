@@ -651,6 +651,8 @@ void RagdollDemo::clientMoveAndDisplay()
             if ( timeStep==1000 )
             {
                 Save_Position(body[0]);
+                printf('');
+                char ch = getchar();
                 exit(0);
             }
             
