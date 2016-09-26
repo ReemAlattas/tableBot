@@ -407,7 +407,7 @@ void RagdollDemo::initPhysics()
     
     //Set the elements of matrix weights to the numbers stored in the weights.dat
     ifstream inFile;
-    inFile.open("/Users/reemalattas/weights.dat");
+    inFile.open("/Users/reemalattas/bullet-final-project/weights.dat");
     string line;
     for(int j=0; j<4; j++){
         for(int i=0; i<8; i++){
@@ -654,7 +654,7 @@ void RagdollDemo::clientMoveAndDisplay()
                 btVector3 pos = body[0]->getCenterOfMassPosition();
                 //printf("%f %f %f\n", pos.x(), pos.y(), pos.z());
                 ofstream myfile;
-                myfile.open ("/Users/reemalattas/fits.dat");
+                myfile.open ("/Users/reemalattas/bullet-final-project/fits.dat");
                 myfile << pos.z();
                 myfile.close();
                 
