@@ -649,7 +649,10 @@ void RagdollDemo::clientMoveAndDisplay()
             timeStep++;
             
             if ( timeStep==1000 )
+            {
+                Save_Position(body[0]);
                 exit(0);
+            }
             
             //if(count %1000 == 0)
             //{
