@@ -25,6 +25,16 @@ stdlib.h
 -
 time.h
 -
+iostream
+-
+fstream
+-
+string
+-
+sstream
+-
+iomanip
+-
 
 /Users/reemalattas/Downloads/bullet-final/Demos/RagdollDemo/RagdollDemo.h
 GlutDemoApplication.h

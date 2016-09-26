@@ -28,6 +28,14 @@
 #include <stdlib.h>     /* srand, rand */
 #include <time.h>       /* time */
 
+#include <iostream>
+#include <fstream>
+#include <string>
+#include <sstream>
+#include <iomanip>
+
+using namespace std;
+
 
 // Enrico: Shouldn't these three variables be real constants and not defines?
 
