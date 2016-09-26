@@ -651,6 +651,13 @@ void RagdollDemo::clientMoveAndDisplay()
             if ( timeStep==1000 )
             {
                 //Save_Position(body[0]);
+                btVector3 pos = body[0]->getCenterOfMassPosition();
+                //printf("%f %f %f\n", pos.x(), pos.y(), pos.z());
+                ofstream myfile;
+                myfile.open ("/Users/reemalattas/fits.dat");
+                myfile << pos.z();
+                myfile.close();
+                
                 printf("");
                 char ch = getchar();
                 exit(0);
